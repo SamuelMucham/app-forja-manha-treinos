@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +6,11 @@
     scroll-behavior: smooth;
 }
 
-nav{
+body {
+    overflow: hidden;
+}
+
+nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -18,65 +22,80 @@ nav{
     justify-content: space-between;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.521);
     z-index: 999;
+    animation: fromNav 2s ease-in-out;
 }
 
-.wrap-img{
-background-color: rgb(124, 124, 124);
-width: 30%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+@keyframes fromNav {
+    0% {
+        transform: translatey(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translatey(0px);
+        opacity: 1;
+    }
+}
+
+.wrap-img {
+    background-color: rgb(124, 124, 124);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
-.wrap-links{
-background-color: rgb(184, 182, 182);
-width: 70%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 10px;
+.wrap-links {
+    background-color: rgb(184, 182, 182);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.wrap-links a{
+.wrap-links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
     transition: all 200ms ease-in-out;
 }
 
-.wrap-links a:hover{
+.wrap-links a:hover {
     text-decoration: underline;
     color: #4B5563;
 }
 
-.logo{
+.logo {
     width: 70px;
     height: 70px;
 }
-.wrap-banner{
+
+.wrap-banner {
     border-radius: 999px;
     overflow: hidden;
     width: 400px;
     height: 400px;
 }
-.wrap-banner img{
+
+.wrap-banner img {
     width: 400px;
     height: 400px;
-        filter: grayscale(60%);
-    transition:all 200ms ease-in-out;
+    filter: grayscale(60%);
+    transition: all 200ms ease-in-out;
 }
 
 
 
-.wrap-banner img:hover{
+.wrap-banner img:hover {
     filter: grayscale(0);
-    transform:scale(1.1)
+    transform: scale(1.1)
 }
 
-#s1{
+#s1 {
     background-color: rgb(116, 115, 115);
     min-height: 100vh;
     padding-top: 80px;
@@ -84,70 +103,200 @@ gap: 10px;
     align-items: center;
     justify-content: center;
 }
-.left{
+
+.left {
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: fromLeft 2s ease-in-out;
 }
-.right{
-    width:  350px;
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-250px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.right {
+    width: 350px;
+    animation: fromRight 2s ease-in-out;
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 
-#s2{
-    background-color:rgb(95, 95, 95);
+#s2 {
+    background-color: rgb(95, 95, 95);
     min-height: 100vh;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
 }
 
-#s3{
+.wrap-cards {
+    margin-bottom: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+ body {
+    background: radial-gradient(circle at center, #0d0d0d 0%, #050505 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #f5f5f5;
+  }
+
+  .curiosidades-section {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .curiosidades-section h2 {
+    font-size: 2.4rem;
+    color: #f5c518;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .intro {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.05);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+    border-color: rgba(255, 204, 0, 0.4);
+  }
+
+  .card h3 {
+    color: #f5c518;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+#s3 {
     background-color: rgb(71, 71, 71);
     min-height: 100vh;
-    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
-#s4{
+#s3 iframe {
+    width: 768px;
+    height: 449px;
+}
+
+.wrap-video {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#s4 {
     background-color: rgb(58, 58, 58);
     min-height: 100vh;
     padding-top: 80px;
 }
 
-@media (width <= 768px){
-    nav{
+@media (width <=768px) {
+    nav {
         flex-direction: column;
         height: auto;
         padding-bottom: 15px;
     }
-    .wrap-links a{
+
+    .wrap-links a {
         text-align: center;
     }
-    #s1, 
-    #s2,
-    #s3,
-    #s4{
-        padding: 50px;
+
+    #s1 {
+        flex-direction: column;
+        padding-top: 130px;
         min-height: 50vh;
         height: auto;
     }
-    #s1{
-        flex-direction: column;
-        padding-top: 130px;
+
+    .left {
+        width: 100%;
     }
-    .left{
-    width: 100%;
-        }
-    .right{
-    width:  100%;
-    text-align: center;
-}
-.wrap-banner{
-    width: 250px;
-    height: 250px;
-}
-.wrap-banner img{
-    width: 250px;
-    height: 250px;
-}
+
+    .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .wrap-banner {
+        width: 250px;
+        height: 250px;
+    }
+
+    .wrap-banner img {
+        width: 250px;
+        height: 250px;
+    }
+
+    #s3 {
+        background-color: rgb(71, 71, 71);
+        min-height: 50vh;
+        height: auto;
+        width: 100%;
+    }
+
+    #s3 iframe {
+        width: 100%;
+    }
+
 
 }
